@@ -28,12 +28,15 @@ Now iterate through the variable and increase the count: and print the count vi
 #Developed By:- NAVEEN S
 #Register number:-212222240070
 import sys
-count =0
-with open(sys.argv[1],'r') as f:
-    for lines in f:
-        words = lines.split()
-        count+=len(words)
-print("Number of words in a file:",count)   
+fp=open(sys.argv[1],"r")
+d={}
+for i in fp:
+   for w in i.split():
+    if w not in d.keys():
+       d[w]=1
+    else:
+     d[w]+=1
+ print(d)   
 ```   
 
 ### OUTPUT:
